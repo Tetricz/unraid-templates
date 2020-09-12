@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>minecraft-server</Name>
+  <Repository>itzg/minecraft-server</Repository>
+  <Registry>https://hub.docker.com/r/itzg/minecraft-server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/itzg/minecraft-server</Support>
+  <Project>https://www.minecraft.net/</Project>
+  <Overview>This is a Basic Minecraft Server, with the basic configuration it will download and install a Vanilla Minecraft.&#xD;
+&#xD;
+You can also install a FTB (FeedTheBeast), Bukkit, Spigot,... server.&#xD;
+&#xD;
+Start the container for the first time let it do it's work and shut it down.&#xD;
+After that copy over your favorite server executable (don't forget to set the Serverfile name to the same as you copied over) and start the container again.&#xD;
+&#xD;
+ATTENTION: Don't forget to accept the EULA down below and don't forget to edit the 'server.properties' file the server is by default configured to be a LAN server and to be not snooped.&#xD;
+CONSOLE: To connect to the console open up a terminal and type in: 'screen -xS Minecraft' (without quotes), to disconnect from the console simply close the window.</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/mc/mc.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1587291743</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>This is a Basic Minecraft Server, with the basic configuration it will download and install a Vanilla Minecraft.&#xD;
+&#xD;
+You can also install a FTB (FeedTheBeast), Bukkit, Spigot,... server.&#xD;
+&#xD;
+Start the container for the first time let it do it's work and shut it down.&#xD;
+After that copy over your favorite server executable (don't forget to set the Serverfile name to the same as you copied over) and start the container again.&#xD;
+&#xD;
+ATTENTION: Don't forget to accept the EULA down below and don't forget to edit the 'server.properties' file the server is by default configured to be a LAN server and to be not snooped.&#xD;
+CONSOLE: To connect to the console open up a terminal and type in: 'screen -xS Minecraft' (without quotes), to disconnect from the console simply close the window.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>25565</HostPort>
+        <ContainerPort>25565</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort/>
+        <ContainerPort>25575</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>true</Value>
+      <Name>EULA</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>LATEST</Value>
+      <Name>VERSION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>VANILLA</Value>
+      <Name>TYPE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1G</Value>
+      <Name>MEMORY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>CUSTOM_SERVER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="ServerFiles" Target="/data" Default="" Mode="rw" Description="Container Path: /serverdata/serverfiles" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="TCP - Game Port" Target="25565" Default="" Mode="tcp" Description="Container Port: 25565" Type="Port" Display="always" Required="true" Mask="false">25565</Config>
+  <Config Name="TCP2 - RCON" Target="25575" Default="" Mode="tcp" Description="Not required if not needed" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="Accept EULA" Target="EULA" Default="true" Mode="" Description="Container Variable: EULA" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="VERSION" Target="VERSION" Default="LATEST" Mode="" Description="Container Variable: VERSION" Type="Variable" Display="always" Required="false" Mask="false">LATEST</Config>
+  <Config Name="Type" Target="TYPE" Default="VANILLA" Mode="" Description="Container Variable: TYPE" Type="Variable" Display="always" Required="false" Mask="false">VANILLA</Config>
+  <Config Name="MEMORY" Target="MEMORY" Default="1G" Mode="" Description="Container Variable: MEMORY" Type="Variable" Display="always" Required="true" Mask="false">1G</Config>
+  <Config Name="CUSTOM_SERVER" Target="CUSTOM_SERVER" Default="" Mode="" Description="Jar location or URL to download it. CUSTOM ONLY" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="UID" Target="UID" Default="99" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="GID" Target="GID" Default="100" Mode="" Description="Container Variable: GUID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>

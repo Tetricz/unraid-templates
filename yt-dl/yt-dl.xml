@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>yt-dl</Name>
+  <Repository>tetricz/yt-dl</Repository>
+  <Registry>https://hub.docker.com/r/tetricz/yt-dl</Registry>
+  <Network>none</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://ytdl-org.github.io/youtube-dl/</Project>
+  <Overview>Downloads and organize youtube channels</Overview>
+  <Category>Backup: Downloaders:</Category>
+  <WebUI/>
+  <TemplateURL></TemplateURL>
+  <Icon>https://git.tetricz.com/Tetricz/unraid-templates/raw/branch/master/yt-dl/logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1599517897</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Downloads and organize youtube channels</Description>
+  <Networking>
+    <Mode>none</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/yt-dl</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/opt/ytdl</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1001</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="App data" Target="/config" Default="/mnt/user/appdata/yt-dl" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/yt-dl</Config>
+  <Config Name="Host Path 2" Target="/opt/ytdl" Default="" Mode="rw" Description="Container Path: /opt/ytdl" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="UID" Target="UID" Default="1001" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced" Required="false" Mask="false">1001</Config>
+  <Config Name="GID" Target="GID" Default="100" Mode="" Description="Container Variable: GID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>
