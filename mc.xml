@@ -21,7 +21,7 @@ CONSOLE: To connect to the console open up a terminal and type in: 'screen -xS M
   <Category>GameServers:</Category>
   <WebUI/>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/mc/mc.png</Icon>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/mc.png</Icon>
   <ExtraParams>--restart=unless-stopped</ExtraParams>
   <PostArgs/>
   <CPUset/>

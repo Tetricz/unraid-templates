@@ -13,7 +13,7 @@
   <Category>Backup: Downloaders:</Category>
   <WebUI/>
   <TemplateURL></TemplateURL>
-  <Icon>https://git.tetricz.com/Tetricz/unraid-templates/raw/branch/master/yt-dl/logo.png</Icon>
+  <Icon>https://git.tetricz.com/Tetricz/unraid-templates/raw/branch/master/icons/ytdl.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
