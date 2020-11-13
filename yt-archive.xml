@@ -13,7 +13,7 @@
   <Category>Backup: Downloaders:</Category>
   <WebUI/>
   <TemplateURL/>
-  <Icon>https://git.tetricz.com/Tetricz/unraid-templates/raw/branch/master/icons/ytdl.png</Icon>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/ytdl.png</Icon>
   <ExtraParams>--tmpfs /tmp:rw,noexec,nosuid,size=1g</ExtraParams>
   <PostArgs/>
   <CPUset/>
