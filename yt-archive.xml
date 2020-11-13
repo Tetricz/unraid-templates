@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>yt-archive</Name>
   <Repository>tetricz/yt-archive</Repository>
-  <Registry>https://hub.docker.com/r/tetricz/yt-dl</Registry>
+  <Registry>https://hub.docker.com/r/tetricz/yt-archive</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>bash</Shell>
