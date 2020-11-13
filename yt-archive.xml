@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>yt-dl</Name>
-  <Repository>tetricz/yt-dl</Repository>
+  <Name>yt-archive</Name>
+  <Repository>tetricz/yt-archive</Repository>
   <Registry>https://hub.docker.com/r/tetricz/yt-dl</Registry>
-  <Network>none</Network>
+  <Network>bridge</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -12,17 +12,17 @@
   <Overview>Downloads and organize youtube channels</Overview>
   <Category>Backup: Downloaders:</Category>
   <WebUI/>
-  <TemplateURL></TemplateURL>
+  <TemplateURL/>
   <Icon>https://git.tetricz.com/Tetricz/unraid-templates/raw/branch/master/icons/ytdl.png</Icon>
-  <ExtraParams/>
+  <ExtraParams>--tmpfs /tmp:rw,noexec,nosuid,size=1g</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1599517897</DateInstalled>
+  <DateInstalled>1605259560</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Downloads and organize youtube channels</Description>
   <Networking>
-    <Mode>none</Mode>
+    <Mode>bridge</Mode>
     <Publish/>
   </Networking>
   <Data>
@@ -39,6 +39,16 @@
   </Data>
   <Environment>
     <Variable>
+      <Value>TRUE </Value>
+      <Name>COOKIES</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>600</Value>
+      <Name>TIME_INTERVAL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>1001</Value>
       <Name>UID</Name>
       <Mode/>
@@ -52,6 +62,8 @@
   <Labels/>
   <Config Name="App data" Target="/config" Default="/mnt/user/appdata/yt-dl" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/yt-dl</Config>
   <Config Name="Host Path 2" Target="/ytdl" Default="" Mode="rw" Description="Container Path: /ytdl" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="COOKIES" Target="COOKIES" Default="TRUE | FALSE" Mode="" Description="You must put cookies.txt in appdata folder if you wish to use this" Type="Variable" Display="always" Required="false" Mask="false">TRUE </Config>
+  <Config Name="TIME_INTERVAL" Target="TIME_INTERVAL" Default="600" Mode="" Description="Time in which it repeats scanning. You can lower this the more Channels you archive as it scans one by one. Minimum I would set it to is 60" Type="Variable" Display="always" Required="false" Mask="false">600</Config>
   <Config Name="UID" Target="UID" Default="1001" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced" Required="false" Mask="false">1001</Config>
   <Config Name="GID" Target="GID" Default="100" Mode="" Description="Container Variable: GID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
 </Container>
