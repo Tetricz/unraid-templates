@@ -13,7 +13,7 @@
   <Category>Network:DNS</Category>
   <WebUI>http://[IP]:[PORT:5380]</WebUI>
   <TemplateURL></TemplateURL>
-  <Icon>https://git.tetricz.com/Tetricz/unraid-templates/raw/branch/master/icons/techdns.png</Icon>
+  <Icon>https://github.com/Tetricz/Tetricz/unraid-templates/raw/branch/master/icons/techdns.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
