@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>xBrowserSync</Name>
+  <Repository>xbrowsersync/api</Repository>
+  <Registry>https://hub.docker.com/r/xbrowsersync/api/</Registry>
+  <Network>proxynet</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/xbrowsersync/api/</Support>
+  <Project>https://www.xbrowsersync.org/</Project>
+  <Overview>Browser syncing as it should be: secure, anonymous and free!&#xD;
+[br][br]&#xD;
+You will need to create a settings.json file. You can find an example at [b]https://github.com/xbrowsersync/api-docker/blob/master/settings.json[/b]&#xD;
+[br][br]&#xD;
+A mongoDB is required.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/Tetricz/Tetricz/unraid-templates/raw/branch/master/icons/xbrowsersync.png</Icon>
+  <ExtraParams>--restart=always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1609224559</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Browser syncing as it should be: secure, anonymous and free!&#xD;
+[br][br]&#xD;
+You will need to create a settings.json file. You can find an example at [b]https://github.com/xbrowsersync/api-docker/blob/master/settings.json[/b]&#xD;
+[br][br]&#xD;
+A mongoDB is required.</Description>
+  <Networking>
+    <Mode>proxynet</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8081</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/xbrowsersync/settings.json</HostDir>
+      <ContainerDir>/usr/src/api/config/settings.json</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>XBROWSERSYNC_DB_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>XBROWSERSYNC_DB_PWD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="port" Target="8080" Default="" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8081</Config>
+  <Config Name="XBROWSERSYNC_DB_USER" Target="XBROWSERSYNC_DB_USER" Default="" Mode="" Description="Container Variable: XBROWSERSYNC_DB_USER" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="XBROWSERSYNC_DB_PWD" Target="XBROWSERSYNC_DB_PWD" Default="" Mode="" Description="Container Variable: XBROWSERSYNC_DB_PWD" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Host Path 1" Target="/usr/src/api/config/settings.json" Default="" Mode="rw" Description="Container Path: /usr/src/api/config/settings.json" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/xbrowsersync/settings.json</Config>
+</Container>
