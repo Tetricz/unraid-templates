@@ -17,7 +17,7 @@ A mongoDB is required.</Overview>
   <Category/>
   <WebUI>http://[IP]:[PORT:8081]/</WebUI>
   <TemplateURL/>
-  <Icon>https://github.com/Tetricz/Tetricz/unraid-templates/raw/branch/master/icons/xbrowsersync.png</Icon>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/xbrowsersync.png</Icon>
   <ExtraParams>--restart=always</ExtraParams>
   <PostArgs/>
   <CPUset/>
