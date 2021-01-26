@@ -33,7 +33,7 @@
     </Volume>
     <Volume>
       <HostDir/>
-      <ContainerDir>/ytdl</ContainerDir>
+      <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
@@ -61,7 +61,7 @@
   </Environment>
   <Labels/>
   <Config Name="App data" Target="/config" Default="/mnt/user/appdata/yt-dl" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/yt-dl</Config>
-  <Config Name="Host Path 2" Target="/ytdl" Default="" Mode="rw" Description="Container Path: /ytdl" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Host Path 2" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="COOKIES" Target="COOKIES" Default="TRUE | FALSE" Mode="" Description="You must put cookies.txt in appdata folder if you wish to use this" Type="Variable" Display="always" Required="false" Mask="false">TRUE </Config>
   <Config Name="TIME_INTERVAL" Target="TIME_INTERVAL" Default="600" Mode="" Description="Time in which it repeats scanning. You can lower this the more Channels you archive as it scans one by one. Minimum I would set it to is 60" Type="Variable" Display="always" Required="false" Mask="false">600</Config>
   <Config Name="UID" Target="UID" Default="1001" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced" Required="false" Mask="false">1001</Config>
