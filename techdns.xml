@@ -12,12 +12,12 @@
   <Overview>Technitium DNS Server is an open source tool that can be used for self hosting a local DNS server for privacy and security or, used for experimentation/testing by software developers on their computer. It works out-of-the-box with no or minimal configuration and provides a user friendly web console accessible using any web browser.</Overview>
   <Category>Network:DNS</Category>
   <WebUI>http://[IP]:[PORT:5380]</WebUI>
-  <TemplateURL></TemplateURL>
+  <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/techdns.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1599893593</DateInstalled>
+  <DateInstalled>1620059007</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Technitium DNS Server is an open source tool that can be used for self hosting a local DNS server for privacy and security or, used for experimentation/testing by software developers on their computer. It works out-of-the-box with no or minimal configuration and provides a user friendly web console accessible using any web browser.</Description>
@@ -34,12 +34,17 @@
         <ContainerPort>53</ContainerPort>
         <Protocol>udp</Protocol>
       </Port>
+      <Port>
+        <HostPort>53</HostPort>
+        <ContainerPort>53</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
     </Publish>
   </Networking>
   <Data>
     <Volume>
       <HostDir>/mnt/cache/appdata/ts-dnsserver</HostDir>
-      <ContainerDir>/etc/dns/config</ContainerDir>
+      <ContainerDir>/dns/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
@@ -56,9 +61,10 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="App data" Target="/etc/dns/config" Default="/mnt/user/appdata/ts-dnsserver" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/ts-dnsserver</Config>
-  <Config Name="Web UI" Target="5380" Default="5380" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="false" Mask="false">5380</Config>
-  <Config Name="DNS Port" Target="53" Default="53" Mode="udp" Description="Container Port: 53" Type="Port" Display="always" Required="false" Mask="false">53</Config>
+  <Config Name="App data" Target="/dns/config" Default="/mnt/user/appdata/ts-dnsserver" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/ts-dnsserver</Config>
+  <Config Name="Web UI" Target="5380" Default="5380" Mode="tcp" Description="Container Port: 5380" Type="Port" Display="always" Required="false" Mask="false">5380</Config>
+  <Config Name="DNS Port UDP" Target="53" Default="53" Mode="udp" Description="Container Port: 53" Type="Port" Display="always" Required="false" Mask="false">53</Config>
+  <Config Name="DNS Port TCP" Target="53" Default="53" Mode="tcp" Description="Container Port: 53" Type="Port" Display="always" Required="false" Mask="false">53</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID 99" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
 </Container>
