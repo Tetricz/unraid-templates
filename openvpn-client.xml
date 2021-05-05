@@ -7,14 +7,16 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://github.com/Tetricz/CA-templates<Support/>
   <Project/>
   <Overview>OpenVPN Client for docker containers&#xD;
-&#xD;
-use --net=container:openvpn-client to pass dockers through vpn&#xD;
-make sure the network is none&#xD;
-&#xD;
---cap-add=NET_ADMIN is needed for this to work</Overview>
+[br][br]&#xD;
+Use &amp;lt;b&amp;gt;--net=container:openvpn-client&amp;lt;/b&amp;gt; to pass dockers through vpn and set the network to none. [br]&#xD;
+[br][br]&#xD;
+--cap-add=NET_ADMIN is needed for this to work&#xD;
+[br][br]&#xD;
+Some manual configuration of the OpenVPN files may be required.[br]&#xD;
+PIA and ProtonVPN are two services that are tested to work with this container.</Overview>
   <Category>Network:VPN</Category>
   <WebUI/>
   <TemplateURL/>
@@ -22,15 +24,17 @@ make sure the network is none&#xD;
   <ExtraParams>--cap-add=NET_ADMIN --restart=unless-stopped</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1601155564</DateInstalled>
+  <DateInstalled>1620247094</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>OpenVPN Client for docker containers&#xD;
-&#xD;
-use --net=container:openvpn-client to pass dockers through vpn&#xD;
-make sure the network is none&#xD;
-&#xD;
---cap-add=NET_ADMIN is needed for this to work</Description>
+[br][br]&#xD;
+Use &amp;lt;b&amp;gt;--net=container:openvpn-client&amp;lt;/b&amp;gt; to pass dockers through vpn and set the network to none. [br]&#xD;
+[br][br]&#xD;
+--cap-add=NET_ADMIN is needed for this to work&#xD;
+[br][br]&#xD;
+Some manual configuration of the OpenVPN files may be required.[br]&#xD;
+PIA and ProtonVPN are two services that are tested to work with this container.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish/>
@@ -80,12 +84,12 @@ make sure the network is none&#xD;
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="VPN_USER" Target="VPN_USER" Default="" Mode="" Description="Container Variable: VPN_USER" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="VPN_PASS" Target="VPN_PASS" Default="" Mode="" Description="Container Variable: VPN_PASS" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="ovpn config" Target="/openvpn" Default="/mnt/user/appdata/openvpn-client" Mode="rw" Description="Container Path: /openvpn" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/openvpn-client</Config>
-  <Config Name="Network Protocol" Target="PROTO" Default="udp|tpc" Mode="" Description="Container Variable: PROTO" Type="Variable" Display="always" Required="false" Mask="false">udp</Config>
-  <Config Name="LAN_NETWORK" Target="LAN_NETWORK" Default="192.168.1.0/24" Mode="" Description="Container Variable: LAN_NETWORK" Type="Variable" Display="always" Required="false" Mask="false">192.168.1.0/24</Config>
-  <Config Name="PORT" Target="PORT" Default="1194" Mode="" Description="preferred port to connect to vpn" Type="Variable" Display="always" Required="false" Mask="false">1194</Config>
-  <Config Name="docker subtnet" Target="docker_SUBNET" Default="172.17.0.0/16" Mode="" Description="Container Variable: docker_SUBNET" Type="Variable" Display="always" Required="false" Mask="false">172.17.0.0/16</Config>
-  <Config Name="docker gateway" Target="docker_GATEWAY" Default="172.17.0.1" Mode="" Description="Container Variable: docker_GATEWAY" Type="Variable" Display="always" Required="false" Mask="false">172.17.0.1</Config>
+  <Config Name="VPN_USER" Target="VPN_USER" Default="" Mode="" Description="Container Variable: VPN_USER" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="VPN_PASS" Target="VPN_PASS" Default="" Mode="" Description="Container Variable: VPN_PASS" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Network Protocol" Target="PROTO" Default="udp|tcp" Mode="" Description="Container Variable: PROTO" Type="Variable" Display="always" Required="true" Mask="false">udp</Config>
+  <Config Name="LAN_NETWORK" Target="LAN_NETWORK" Default="192.168.1.0/24" Mode="" Description="Container Variable: LAN_NETWORK" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.0/24</Config>
+  <Config Name="PORT" Target="PORT" Default="1194" Mode="" Description="preferred port to connect to vpn" Type="Variable" Display="always" Required="true" Mask="false">1194</Config>
+  <Config Name="docker subtnet" Target="docker_SUBNET" Default="172.17.0.0/16" Mode="" Description="Container Variable: docker_SUBNET" Type="Variable" Display="always" Required="true" Mask="false">172.17.0.0/16</Config>
+  <Config Name="docker gateway" Target="docker_GATEWAY" Default="172.17.0.1" Mode="" Description="Container Variable: docker_GATEWAY" Type="Variable" Display="always" Required="true" Mask="false">172.17.0.1</Config>
+  <Config Name="ovpn config" Target="/openvpn" Default="/mnt/user/appdata/openvpn-client" Mode="rw" Description="Container Path: /openvpn" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/openvpn-client</Config>
 </Container>
