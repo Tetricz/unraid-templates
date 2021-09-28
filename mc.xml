@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>mc</Name>
+  <Repository>tetricz/minecraft</Repository>
+  <Registry>https://hub.docker.com/r/tetricz/minecraft</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://www.minecraft.net/</Project>
+  <Overview>A lightweight container for running a minecraft server&#xD;
+&#xD;
+Drop in your server.jar and hit run</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/mc.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1630130160</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>A lightweight container for running a minecraft server&#xD;
+&#xD;
+Drop in your server.jar and hit run</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>25565</HostPort>
+        <ContainerPort>25565</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort/>
+        <ContainerPort>25575</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/minecraft</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1G</Value>
+      <Name>MEMORY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>server.jar</Value>
+      <Name>JARFILE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="TCP - Game Port" Target="25565" Default="" Mode="tcp" Description="Container Port: 25565" Type="Port" Display="always" Required="true" Mask="false">25565</Config>
+  <Config Name="TCP2 - RCON" Target="25575" Default="" Mode="tcp" Description="Not required if not needed" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="MEMORY" Target="MEMORY" Default="1G" Mode="" Description="Container Variable: MEMORY" Type="Variable" Display="always" Required="true" Mask="false">1G</Config>
+  <Config Name="Data Files" Target="/minecraft" Default="" Mode="rw" Description="Container Path: /minecraft" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="JARFILE" Target="JARFILE" Default="" Mode="" Description="Container Variable: JARFILE" Type="Variable" Display="always" Required="false" Mask="false">server.jar</Config>
+  <Config Name="UID" Target="UID" Default="99" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="GID" Target="GID" Default="100" Mode="" Description="Container Variable: GUID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>

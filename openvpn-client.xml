@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>openvpn-client</Name>
+  <Repository>tetricz/openvpn-client</Repository>
+  <Registry>https://hub.docker.com/r/tetricz/openvpn-client</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Tetricz/CA-templates<Support/>
+  <Project/>
+  <Overview>OpenVPN Client for docker containers&#xD;
+[br][br]&#xD;
+Use &amp;lt;b&amp;gt;--net=container:openvpn-client&amp;lt;/b&amp;gt; to pass dockers through vpn and set the network to none. [br]&#xD;
+[br][br]&#xD;
+--cap-add=NET_ADMIN is needed for this to work&#xD;
+[br][br]&#xD;
+Some manual configuration of the OpenVPN files may be required.[br]&#xD;
+PIA and ProtonVPN are two services that are tested to work with this container.</Overview>
+  <Category>Network:VPN</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/ovpn.png</Icon>
+  <ExtraParams>--cap-add=NET_ADMIN --restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1620247094</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>OpenVPN Client for docker containers&#xD;
+[br][br]&#xD;
+Use &amp;lt;b&amp;gt;--net=container:openvpn-client&amp;lt;/b&amp;gt; to pass dockers through vpn and set the network to none. [br]&#xD;
+[br][br]&#xD;
+--cap-add=NET_ADMIN is needed for this to work&#xD;
+[br][br]&#xD;
+Some manual configuration of the OpenVPN files may be required.[br]&#xD;
+PIA and ProtonVPN are two services that are tested to work with this container.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/openvpn-client</HostDir>
+      <ContainerDir>/openvpn</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>VPN_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>VPN_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>udp</Value>
+      <Name>PROTO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>192.168.1.0/24</Value>
+      <Name>LAN_NETWORK</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1194</Value>
+      <Name>PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>172.17.0.0/16</Value>
+      <Name>docker_SUBNET</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>172.17.0.1</Value>
+      <Name>docker_GATEWAY</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="VPN_USER" Target="VPN_USER" Default="" Mode="" Description="Container Variable: VPN_USER" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="VPN_PASS" Target="VPN_PASS" Default="" Mode="" Description="Container Variable: VPN_PASS" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Network Protocol" Target="PROTO" Default="udp|tcp" Mode="" Description="Container Variable: PROTO" Type="Variable" Display="always" Required="true" Mask="false">udp</Config>
+  <Config Name="LAN_NETWORK" Target="LAN_NETWORK" Default="192.168.1.0/24" Mode="" Description="Container Variable: LAN_NETWORK" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.0/24</Config>
+  <Config Name="PORT" Target="PORT" Default="1194" Mode="" Description="preferred port to connect to vpn" Type="Variable" Display="always" Required="true" Mask="false">1194</Config>
+  <Config Name="docker subtnet" Target="docker_SUBNET" Default="172.17.0.0/16" Mode="" Description="Container Variable: docker_SUBNET" Type="Variable" Display="always" Required="true" Mask="false">172.17.0.0/16</Config>
+  <Config Name="docker gateway" Target="docker_GATEWAY" Default="172.17.0.1" Mode="" Description="Container Variable: docker_GATEWAY" Type="Variable" Display="always" Required="true" Mask="false">172.17.0.1</Config>
+  <Config Name="ovpn config" Target="/openvpn" Default="/mnt/user/appdata/openvpn-client" Mode="rw" Description="Container Path: /openvpn" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/openvpn-client</Config>
+</Container>

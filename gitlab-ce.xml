@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>gitlab-ce</Name>
+  <Repository>gitlab/gitlab-ce</Repository>
+  <Registry>https://hub.docker.com/r/gitlab/gitlab-ce/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Tetricz/unraid-templates/issues</Support>
+  <Project>https://docs.gitlab.com/</Project>
+  <Overview>GitLab Community Edition docker image&#xD;
+&amp;lt;/br&amp;gt;&#xD;
+One application with endless possibilities. Organizations rely on GitLab&#x2019;s source code management, CI/CD, security, and more to deliver software rapidly.&#xD;
+&amp;lt;/br&amp;gt;&#xD;
+Change the hostname to your tld before setting things up.&#xD;
+&amp;lt;/br&amp;gt;&#xD;
+When changing the GITLAB OMNIBUS CONFIG please refer to &amp;lt;a href = "https://docs.gitlab.com/omnibus/docker/#pre-configure-docker-container"&amp;gt; gitlab docs &amp;lt;/a&amp;gt;.&#xD;
+&amp;lt;/br&amp;gt;&#xD;
+If you plan to change the ports for the docker container remember to change them in the GITLAB OMNIBUS CONFIG as well.</Overview>
+  <Category>Cloud: Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:9080]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/gitlab.png</Icon>
+  <ExtraParams>--hostname unraid.com</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1615954385</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>GitLab Community Edition docker image&#xD;
+&amp;lt;/br&amp;gt;&#xD;
+One application with endless possibilities. Organizations rely on GitLab&#x2019;s source code management, CI/CD, security, and more to deliver software rapidly.&#xD;
+&amp;lt;/br&amp;gt;&#xD;
+Change the hostname to your tld before setting things up.&#xD;
+&amp;lt;/br&amp;gt;&#xD;
+When changing the GITLAB OMNIBUS CONFIG please refer to &amp;lt;a href = "https://docs.gitlab.com/omnibus/docker/#pre-configure-docker-container"&amp;gt; gitlab docs &amp;lt;/a&amp;gt;.&#xD;
+&amp;lt;/br&amp;gt;&#xD;
+If you plan to change the ports for the docker container remember to change them in the GITLAB OMNIBUS CONFIG as well.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9080</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>9443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>9022</HostPort>
+        <ContainerPort>22</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/gitlab/logs</HostDir>
+      <ContainerDir>/var/log/gitlab</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/gitlab/config</HostDir>
+      <ContainerDir>/etc/gitlab</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/gitlab/data</HostDir>
+      <ContainerDir>/var/data/gitlab</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>"external_url 'https://gitlab.unraid.com:9080'; gitlab_rails['gitlab_shell_ssh_port'] = 9022;"</Value>
+      <Name>GITLAB_OMNIBUS_CONFIG</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="HTTP" Target="80" Default="9080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">9080</Config>
+  <Config Name="HTTPS" Target="443" Default="9443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="false" Mask="false">9443</Config>
+  <Config Name="SSH" Target="22" Default="9022" Mode="tcp" Description="Container Port: 22" Type="Port" Display="always" Required="false" Mask="false">9022</Config>
+  <Config Name="GITLAB_OMNIBUS_CONFIG" Target="GITLAB_OMNIBUS_CONFIG" Default="" Mode="" Description="Container Variable: GITLAB_OMNIBUS_CONFIG" Type="Variable" Display="always" Required="false" Mask="false">"external_url 'https://gitlab.unraid.com:9080'; gitlab_rails['gitlab_shell_ssh_port'] = 9022;"</Config>
+  <Config Name="logs" Target="/var/log/gitlab" Default="/mnt/cache/appdata/gitlab/logs" Mode="rw" Description="Container Path: /var/log/gitlab" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/cache/appdata/gitlab/logs</Config>
+  <Config Name="appdata" Target="/etc/gitlab" Default="/mnt/cache/appdata/gitlab/config" Mode="rw" Description="Container Path: /etc/gitlab" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/cache/appdata/gitlab/config</Config>
+  <Config Name="data" Target="/var/data/gitlab" Default="/mnt/cache/appdata/gitlab/data" Mode="rw" Description="Container Path: /var/data/gitlab" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/cache/appdata/gitlab/data</Config>
+</Container>
