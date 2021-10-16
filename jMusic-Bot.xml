@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>jMusic-bot</Name>
+  <Repository>tetricz/jmusic-bot</Repository>
+  <Registry>https://hub.docker.com/u/tetricz</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Tetricz/docker-jmusic-bot/issues</Support>
+  <Project>https://jmusicbot.com/</Project>
+  <Overview>A Discord music bot that's easy to set up and run yourself! </Overview>
+  <Category>MediaApp:Music MediaServer:Music</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/jmusic-bot.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1634394745</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>A Discord music bot that's easy to set up and run yourself! </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>@mention</Value>
+      <Name>COMMAND_PREFIX</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>BOT_OWNER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>BOT_TOKEN</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>ONLINE</Value>
+      <Name>BOT_STATUS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>SONGINSTATUS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Command prefix" Target="COMMAND_PREFIX" Default="@mention" Mode="" Description="This is the prefix used to issue commands to the bot" Type="Variable" Display="always" Required="true" Mask="false">@mention</Config>
+  <Config Name="Bot Owner" Target="BOT_OWNER" Default="" Mode="" Description="Container Variable: BOT_OWNER" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Bot Token" Target="BOT_TOKEN" Default="" Mode="" Description="Container Variable: BOT_TOKEN" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Bot Status" Target="BOT_STATUS" Default="ONLINE" Mode="" Description="ONLINE IDLE DND INVISIBLE" Type="Variable" Display="always" Required="false" Mask="false">ONLINE</Config>
+  <Config Name="Song in status" Target="SONGINSTATUS" Default="false" Mode="" Description="Whether or not the song appears in the status" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+</Container>
