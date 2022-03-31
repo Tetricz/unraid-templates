@@ -24,7 +24,7 @@ PIA and ProtonVPN are two services that are tested to work with this container.<
   <ExtraParams>--cap-add=NET_ADMIN --restart=unless-stopped --no-healthcheck</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1648760669</DateInstalled>
+  <DateInstalled>1648760910</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>OpenVPN Client for docker containers&#xD;
@@ -39,7 +39,13 @@ PIA and ProtonVPN are two services that are tested to work with this container.<
     <Mode>bridge</Mode>
     <Publish/>
   </Networking>
-  <Data/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/openvpn-client</HostDir>
+      <ContainerDir>/openvpn</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
   <Environment>
     <Variable>
       <Value/>
@@ -79,4 +85,5 @@ PIA and ProtonVPN are two services that are tested to work with this container.<
   <Config Name="PORT" Target="PORT" Default="1194" Mode="" Description="preferred port to connect to vpn" Type="Variable" Display="always" Required="true" Mask="false">1194</Config>
   <Config Name="docker subtnet" Target="docker_SUBNET" Default="172.17.0.0/16" Mode="" Description="Container Variable: docker_SUBNET" Type="Variable" Display="always" Required="true" Mask="false">172.17.0.0/16</Config>
   <Config Name="docker gateway" Target="docker_GATEWAY" Default="172.17.0.1" Mode="" Description="Container Variable: docker_GATEWAY" Type="Variable" Display="always" Required="true" Mask="false">172.17.0.1</Config>
+  <Config Name="ovpn config" Target="/openvpn" Default="/mnt/user/appdata/openvpn-client" Mode="rw" Description="Container Path: /openvpn" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/openvpn-client</Config>
 </Container>
