@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Nextcloud</Name>
+  <Repository>tetricz/nextcloud</Repository>
+  <Registry>https://hub.docker.com/r/tetricz/nextcloud</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Tetricz/nextcloud-docker/issues</Support>
+  <Project>https://github.com/Tetricz/nextcloud-docker/</Project>
+  <Overview>Nextcloud is your open source self hosted productivity platform.&amp;lt;br&amp;gt;&#xD;
+&amp;lt;br&amp;gt;&#xD;
+The default location for your data in this template is /data &amp;lt;br&amp;gt;&#xD;
+When initially setting up the nextcloud instance, make sure you change the location path to /data&amp;lt;br&amp;gt;&#xD;
+</Overview>
+  <Category>Backup: Cloud: Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:8888]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Tetricz/unraid-templates/master/icons/nextcloud.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1651895460</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Nextcloud is your open source self hosted productivity platform.&amp;lt;br&amp;gt;&#xD;
+&amp;lt;br&amp;gt;&#xD;
+The default location for your data in this template is /data &amp;lt;br&amp;gt;&#xD;
+When initially setting up the nextcloud instance, make sure you change the location path to /data&amp;lt;br&amp;gt;&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8888</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/nextcloud/</HostDir>
+      <ContainerDir>/var/www/html/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="config &amp;amp; apps" Target="/var/www/html/" Default="/mnt/user/appdata/nextcloud/" Mode="rw" Description="Container Path: /var/www/html/" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/nextcloud/</Config>
+  <Config Name="data" Target="/data" Default="" Mode="rw" Description="Location where your files will be stored: /data" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="HTTP" Target="80" Default="" Mode="tcp" Description="Preferrably you will put this behind a proxy with https enabled" Type="Port" Display="always" Required="false" Mask="false">8888</Config>
+</Container>
