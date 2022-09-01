@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Tetricz/docker-jmusic-bot/issues</Support>
+  <Support>https://github.com/Tetricz/unraid-templates/issues<Support/>
   <Project>https://jmusicbot.com/</Project>
   <Overview>A Discord music bot that's easy to set up and run yourself! </Overview>
   <Category>MediaApp:Music MediaServer:Music</Category>

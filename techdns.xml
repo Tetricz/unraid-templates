@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Tetricz/CA-templates</Support>
+  <Support>https://github.com/Tetricz/unraid-templates/issues</Support>
   <Project>https://github.com/TechnitiumSoftware/DnsServer</Project>
   <Overview>Technitium DNS Server is an open source tool that can be used for self hosting a local DNS server for privacy and security or, used for experimentation/testing by software developers on their computer. It works out-of-the-box with no or minimal configuration and provides a user friendly web console accessible using any web browser.</Overview>
   <Category>Cloud: Network:DNS</Category>
