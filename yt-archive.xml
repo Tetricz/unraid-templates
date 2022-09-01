@@ -7,8 +7,8 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support/>
-  <Project>https://ytdl-org.github.io/youtube-dl/</Project>
+  <Support>https://github.com/Tetricz/unraid-templates/issues<Support/>
+  <Project>https://github.com/yt-dlp/yt-dlp</Project>
   <Overview>Downloads and organize youtube channels</Overview>
   <Category>Backup: Downloaders:</Category>
   <WebUI/>
@@ -44,7 +44,7 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>TRUE </Value>
+      <Value>TRUE</Value>
       <Name>Download-Archive</Name>
       <Mode/>
     </Variable>
@@ -77,8 +77,8 @@
   <Labels/>
   <Config Name="App data" Target="/config" Default="/mnt/user/appdata/yt-archive" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/yt-archive</Config>
   <Config Name="Host Path 2" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="COOKIES" Target="COOKIES" Default="TRUE | FALSE" Mode="" Description="You must put cookies.txt in appdata folder if you wish to use this" Type="Variable" Display="always" Required="false" Mask="false">TRUE </Config>
-  <Config Name="Download-Archive" Target="ARCHIVE_DOWNLOADED" Default="TRUE | FALSE" Mode="" Description="This will determine whether you want to keep a .downloaded text file to record what's already been downloaded. Turn off for streams" Type="Variable" Display="always" Required="false" Mask="false">TRUE </Config>
+  <Config Name="COOKIES" Target="COOKIES" Default="FALSE" Mode="" Description="You must put cookies.txt in appdata folder if you wish to use this" Type="Variable" Display="always" Required="false" Mask="false">FALSE</Config>
+  <Config Name="Download-Archive" Target="ARCHIVE_DOWNLOADED" Default="TRUE" Mode="" Description="This will determine whether you want to keep a .downloaded text file to record what's already been downloaded. Turn off for streams" Type="Variable" Display="always" Required="false" Mask="false">TRUE</Config>
   <Config Name="TIME_INTERVAL" Target="TIME_INTERVAL" Default="600" Mode="" Description="Time in which it repeats scanning. You can lower this the more Channels you archive as it scans one by one. Minimum I would set it to is 60" Type="Variable" Display="always" Required="false" Mask="false">600</Config>
   <Config Name="QUIET" Target="QUIET" Default="" Mode="" Description="Container Variable: QUIET" Type="Variable" Display="always" Required="false" Mask="false">TRUE</Config>
   <Config Name="FORMAT" Target="FORMAT" Default="" Mode="" Description="Container Variable: FORMAT" Type="Variable" Display="always" Required="false" Mask="false">bestvideo+bestaudio/best[ext=mkv]/best</Config>
