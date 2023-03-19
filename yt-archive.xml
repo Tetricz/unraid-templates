@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Tetricz/unraid-templates/issues<Support/>
+  <Support>https://github.com/Tetricz/unraid-templates/issues</Support>
   <Project>https://github.com/yt-dlp/yt-dlp</Project>
   <Overview>Downloads and organize youtube channels</Overview>
   <Category>Backup: Downloaders:</Category>

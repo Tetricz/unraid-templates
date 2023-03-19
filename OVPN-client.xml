@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Tetricz/unraid-templates/issues<Support/>
+  <Support>https://github.com/Tetricz/unraid-templates/issues</Support>
   <Project/>
   <Overview>OpenVPN Client for docker containers&#xD;
 [br][br]&#xD;
